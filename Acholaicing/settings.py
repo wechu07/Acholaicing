@@ -29,8 +29,8 @@ environ.Env.read_env(BASE_DIR / '.env')  # <-- Updated!
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-w_h4trs&5!xy4p=ns!y@=y1bsc_qxthkmp03+n@2in&^s@)rsp'
-#SECRET_KEY = env('SECRET_KEY') 
+# SECRET_KEY = 'django-insecure-w_h4trs&5!xy4p=ns!y@=y1bsc_qxthkmp03+n@2in&^s@)rsp'
+# SECRET_KEY = env('SECRET_KEY')
 SECRET_KEY = env.str('SECRET_KEY', default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -61,7 +61,8 @@ INTERNAL_IPS = [
 ]
 
 # settings.py
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'acholaicing.fly.dev']  # <-- Updated!
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 'acholaicing.fly.dev']  # <-- Updated!
 
 CSRF_TRUSTED_ORIGINS = ['https://acholaicing.fly.dev']  # <-- Updated!
 
@@ -79,7 +80,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Acholaicing.urls'
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # <-- Updated!
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # <-- Updated!
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  # <-- Updated!
 
 TEMPLATES = [
     {
@@ -157,11 +158,7 @@ MEDIA_ROOT = BASE_DIR
 MEDIA_URL = "/"
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-

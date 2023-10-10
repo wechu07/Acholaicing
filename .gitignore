@@ -1,6 +1,6 @@
 dev/
 venv/
 **/__pycache__/
-scripts.sh
+script.sh
 
 .env
